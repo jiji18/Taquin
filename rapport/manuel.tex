@@ -1,0 +1,91 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage{default}
+\usepackage[french]{babel}
+
+\usetheme{Warsaw}
+
+\title{Jeu de Taquin}
+\subtitle{Manuel de l'utilisateur}
+\author{ARNOULT, MEKHILEF, OUSSAD, RETY}
+\institute{Université d'Orléans}
+\date{\today}
+
+\begin{document}
+
+  \begin{frame}
+   \titlepage
+  \end{frame}
+
+  \begin{frame}
+   \frametitle{Option jar}
+	Voici la liste des différentes options jar:
+	\begin{itemize}
+	\item -name : Affiche le nom des développeurs
+	\item -h : Affiche les différentes options
+	\item -sol fichier.taq -j : Teste si le fichier donné en paramètre a une solution
+	\item -joue fichier.taq : Permet de jouer avec le fichier en paramètre
+	\item -cal delai algo fichier.taq : Calcule une solution en utilisant l'algo en paramètre avec un delai d'exécution donné
+	\end{itemize}
+   \end{frame}
+   
+   \begin{frame}
+    \begin{itemize}
+     \item -anime : Calcule une solution comme -cal et affiche une animation des coups à faire
+	\item -stat delai algo ficher.taq : Affiche les statistiques de résolution du taquin donné en paramètre
+	\item -stat delai fichier.taq : Renvoie toutes les statistiques dans un fichier HTML
+	\item -alea n largeur hauteur delai fichier.taq : Applique tous les algos n fois sur des taquins de taille largeur * hauteur
+    \end{itemize}
+
+   \end{frame}
+
+   
+  \begin{frame}
+	\frametitle{Délai et algorithme}
+	Lors de l'utilisation des options définies précédemment, le délai est exprimé en ms et lorsque celui-ci est dépassé le programme s'arrête. Vous trouverez ci-dessous la liste des différents algorithmes utilisables:
+	\begin{itemize}
+	\item -algo manhattan
+	\item -algo pile
+	\item -algo file
+	\item -algo pmanhattan
+	\item -algo prof 
+	\item -algo bit taille [pile,file,manhattan,pmanhattan]
+	\item -algo redondant n [manhattan/pile/file/pmanhattan/prof]
+	\end{itemize}
+  \end{frame}
+  \begin{frame}
+   \frametitle{Exemples}
+	Voici des exemples pour chaque option:
+\begin{itemize}
+	\item -name : java -jar taquin.jar -name
+	\item -h : java -jar taquin.jar -h
+	\item -sol fichier.taq -j : java -jar taquin.jar -sol taquin/taq1.taq -j
+	\item -joue fichier.taq : java -jar taquin.jar -joue taquin/taq1.taq
+	\item -cal delai algo fichier.taq : java -jar taquin.jar -cal 1000 -algo manhattan taquin/taq1.taq 
+	\end{itemize}
+  \end{frame}
+  
+  \begin{frame}
+   \begin{itemize}
+    	\item -anime delai algo ficher.taq : java-jar taquin.jar 1000 -algo manhattan taquin/taq1.taq
+	\item -stat delai algo ficher.taq : java -jar taquin.jar -stat 1000 -algo manhattan taquin/taq1.taq 
+	\item -stat delai fichier.taq : java -jar taquin.jar -stat 1000 taquin/taq1.taq
+	\item -alea n largeur hauteur delai fichier.taq : java -jar taquin.jar -alea 3 4 4 taquin/taq1.taq
+   \end{itemize}
+
+  \end{frame}
+
+  
+  \begin{frame}
+   \frametitle{Jouer à une partie}
+	Lors d'une partie jouer, à partir de l'option -joue, les différentes touches sont:
+	\begin{itemize}
+	\item z: déplacement de la case 0 vers le haut
+	\item q: déplacement de la case 0 vers la gauche
+	\item s: déplacement de la case 0 vers le bas
+	\item d: déplacement de la case 0 vers la droite
+	\end{itemize}
+	Pour que les déplacements soient vus de façon dynamique, il est nécessaire de clear le terminal ou d'avoir un espace suffisant pour l'afficher.
+	\end{frame}
+\end{document}

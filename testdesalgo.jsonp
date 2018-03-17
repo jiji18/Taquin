@@ -1,0 +1,24 @@
+receiveJsonpData({
+"cols": [
+{"label": "method", "type": "string"},
+{"label": "Average time [s]", "type": "number"},
+{"label": "StdDev", "type": "number"},
+{"label": "GC time [s]", "type": "number"},
+{"label": "GC average [s]", "type": "number"},
+{"label": "StdDev", "type": "number"},
+{"label": "GC calls", "type": "number"},
+{"label": "benchmark rounds", "type": "number"},
+{"label": "warmup rounds", "type": "number"},
+{"label": "Total benchmark time", "type": "number"},
+{"label": "Total warmup time", "type": "number"}
+],
+"rows": [
+{"c": [{"v": "PManhattanComplet"}, {"v": 0.08}, {"v": 0.0}, {"v": 0.0}, {"v": 0.0}, {"v": 0.0}, {"v": 0}, {"v": 1}, {"v": 5}, {"v": 0.08}, {"v": 0.71}]},
+{"c": [{"v": "FileIncomplet"}, {"v": 0.34}, {"v": 0.0}, {"v": 0.0}, {"v": 0.0}, {"v": 0.0}, {"v": 0}, {"v": 1}, {"v": 5}, {"v": 0.34}, {"v": 1.59}]},
+{"c": [{"v": "ManhattanIncomplet"}, {"v": 0.0}, {"v": 0.0}, {"v": 0.0}, {"v": 0.0}, {"v": 0.0}, {"v": 0}, {"v": 1}, {"v": 5}, {"v": 0.0}, {"v": 0.04}]},
+{"c": [{"v": "PileIncomplet"}, {"v": 0.67}, {"v": 0.0}, {"v": 0.02}, {"v": 0.0}, {"v": 0.0}, {"v": 1}, {"v": 1}, {"v": 5}, {"v": 0.67}, {"v": 3.11}]},
+{"c": [{"v": "PManhattanIncomplet"}, {"v": 0.01}, {"v": 0.0}, {"v": 0.0}, {"v": 0.0}, {"v": 0.0}, {"v": 0}, {"v": 1}, {"v": 5}, {"v": 0.01}, {"v": 0.04}]},
+{"c": [{"v": "RedondantManhattan"}, {"v": 0.03}, {"v": 0.0}, {"v": 0.0}, {"v": 0.0}, {"v": 0.0}, {"v": 0}, {"v": 1}, {"v": 5}, {"v": 0.03}, {"v": 0.13}]},
+{"c": [{"v": "ManhattanComplet"}, {"v": 0.01}, {"v": 0.0}, {"v": 0.0}, {"v": 0.0}, {"v": 0.0}, {"v": 0}, {"v": 1}, {"v": 5}, {"v": 0.01}, {"v": 0.04}]},
+{"c": [{"v": "RedondantProfManhattan"}, {"v": 0.18}, {"v": 0.0}, {"v": 0.0}, {"v": 0.0}, {"v": 0.0}, {"v": 0}, {"v": 1}, {"v": 5}, {"v": 0.18}, {"v": 0.97}]}
+]});

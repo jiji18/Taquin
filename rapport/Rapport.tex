@@ -1,0 +1,272 @@
+﻿\documentclass[a4paper,twoside,12pt]{report}
+\usepackage[utf8x]{inputenc}
+\usepackage{color}
+\usepackage{fancyvrb} % pour mettre les verbatim dans des boites
+%\usepackage[dvipdf]{graphics}
+\usepackage[pdftex]{graphicx}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{listingsutf8}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{textcomp}
+\usepackage[toc,page]{appendix}
+%\usepackage{hyperref}
+% Quelques r\'eglages particuliers
+\oddsidemargin=-0.1in %xx
+\evensidemargin=-0.1in
+\textwidth=6.1in
+\topmargin=-0.5in
+\textheight=8.7in
+\parskip 0.25in
+\lstset{
+language=Java,
+basicstyle=\normalsize,
+upquote=true,
+aboveskip={1.5\baselineskip},
+columns=fullflexible,
+showstringspaces=false,
+extendedchars=true,
+breaklines=true,
+showtabs=false,
+showspaces=false,
+showstringspaces=false,
+identifierstyle=\ttfamily,
+keywordstyle=\color[rgb]{1,0,1},
+commentstyle=\color[rgb]{0.133,0.545,0.133},
+stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+\fancyhead[RO,RE]{\includegraphics[width=0.5in]{Logo-univ-orleans.png}}
+\fancyhead[CO,CE]{Rapport de projet}
+\fancyhead[LO,LE]{Jeu de Taquin}
+\fancyfoot[C]{2015}
+\fancyfoot[RO, LE] {\thepage}
+%\fancyfoot[LO, RE] { ARNOULT S., MEKHILEF W., OUSSAD J., RETY M.}
+%
+%Quelques macros
+\newcommand{\moncode}[1]{\begin{center}
+                        \lstinputlisting[inputencoding=utf8/latin1]{#1}
+                        \end{center}}
+
+\newcommand{\monimage}[4]{
+\par\noindent
+\begin{figure}[H] %on ouvre l'environnement figure
+\begin{center}
+\includegraphics[width=#4\textwidth]{#1} %ou image.png, .jpeg etc.
+\caption{#2} %la l\'egende
+\label{#3} %l'\'etiquette pour faire r\'ef\'erence \`a cette image
+\end{center}
+\end{figure} %on ferme l'environnement figure
+}
+
+\newcommand{\ml}[0]{\par\noindent}
+
+%\hyphenation{suppl\'eentaires}{sup-pl\'e-men-tai-res}
+%opening
+
+\begin{document}
+
+\newpage
+\pagestyle{empty}
+%
+\begin{figure}[H]
+\includegraphics[width=0.2\linewidth]{Logo-univ-orleans.png}
+% \hfill
+
+\end{figure}
+\vspace{2cm}
+%
+\begin{center}
+{\Huge Licence 2 Informatique\\\ \\Rapport du projet IF06}
+\par\vspace{1.4cm}
+
+{\Huge\bf \textcolor{red}{\bf Jeu de Taquin}}
+\par\vspace{1.6cm}
+
+{\Large       R\'ealis\'e par:}
+\par\vspace{1.3cm}
+{\large\bf \textcolor{blue}{ARNOULT Simon, MEKHILEF Wissame, OUSSAD Jihad, RETY 
+Martin}}
+\vfill
+\today
+\end{center}
+\newpage
+\pagestyle{fancy}
+
+\begin{abstract}
+%
+Nous avons le plaisir de vous pr\'esenter notre travail sur ce projet. Durant la 
+deuxi\`eme ann\'ee de la l2 Informatique
+\`a l'Universit\'e d'Orl\'eans, nous avons travaill\'e en groupe de quatre sur un projet 
+de r\'esolution de Taquin.
+\end{abstract}
+ 
+\newpage
+\tableofcontents
+\listoffigures
+\newpage
+
+\chapter{Introduction}
+Nous allons ensemble, aborder quatre points principaux dans ce rapport:
+\begin{itemize}
+\item L'\'etude du projet
+\item L'organisation de travail au sain du groupe
+\item Le d\'eveloppement du code
+\item L'analyse des algorithmes.
+\end{itemize}
+%
+\chapter{Etude}
+\par
+L'\'etude du projet fut une premi\'ere \'etape importante pour se mettre dans une 
+bonne dynamique de groupe. D\`es la premi\`ere semaine nous avons r\'ealis\'e une 
+version jouable du Taquin, puis nous avons travaill\'e sur cette version durant 
+toute la premi\`ere phase d'essais.
+\par\noindent
+Rapidement il nous a fallu faire des essais sur ce jeu pour qu'il puisse se 
+r\'esoudre algorithmiquement. Nous avons chacun travaill\'e de notre cot\'e sur nos 
+id\'ees pour pouvoir en tester un plus grand nombre, mais tout en restant en 
+contact r\'eguli\`erement pour avancer ensemble.
+\par\noindent
+Cette mani\`ere de r\'epartir les t\^aches nous a permis de se rendre compte des 
+difficult\'es que l'on allait rencontrer plus rapidement.
+%
+\section{Analyse de faisabilit\'e}
+\par
+L'analyse de faisabilit\'e fut un moment qui a dur\'e du d\'ebut du projet jusqu'aux 
+vacances de f\'evrier, durant cette phase chacun travaillant sur des 
+fonctionnalit\'es diff\'erentes, nous avons pu voir ou \'etaient les probl\`emes dans 
+notre architecture de d\'epart.
+\par\noindent
+Ces tests ont \'et\'e tr\`es divers. Nous avons travaill\'e sur les fonctionnalit\'es 
+VT100 du terminal et la r\'ecup\'eration des touches tap\'ees par l'utilisateur. Mais 
+nous avons aussi cr\'e\'e des algorithmes pour essayer de r\'esoudre le Taquin.
+\par\noindent
+Tous ces tests nous ont permis au mois de f\'evrier d'avoir une id\'ee claire de 
+l'architecture du projet.
+\section{Conception UML}
+\par
+Cette analyse fin f\'evrier a permis d'aboutir au diagramme UML suivant, diagramme 
+qui n'a pas beaucoup \'evolu\'e jusqu'\`a la version finale. Pour
+faciliter la lecture nous avons divis\'e l'architecture en packages, seulement 3 
+des packages sont pr\'esent\'es.
+\ml
+\monimage{../dev/jeuPackage.png}{Repr\'esentation UML du package jeu}{JeuP}{0.9}
+\ml
+\monimage{../dev/algoPackage.png}{Repr\'esentation UML du package 
+algo}{AlgoP}{0.9}
+\ml
+\monimage{../dev/automatePackage.png}{Repr\'esentation UML du package 
+automate}{AutomateP}{0.3}
+\chapter{La gestion de projet}
+%
+\par
+La gestion de projet est \`a la base de tout projet, et encore plus quand il se 
+fait avec une \'equipe de quatre personnes.
+\section{Le travail de groupe}
+%
+\par
+La gestion de projet fut au coeur de nos pr\'eoccupations avant m\^eme que le projet 
+ne d\'emarre, nous avons cherch\'e \`a cr\'eer une \'equipe dynamique. Nous nous sommes 
+donc vus r\'eguli\`erement dans les salles de l'Universit\'e. Malgr\'e cel\`a il nous a 
+fallu mettre en place des moyens d\'edi\'es pour faciliter le travail et \'eviter une 
+d\'egradation de l'entente.
+\par\noindent
+ D\`es la premi\`ere semaine, nous avons mis en place un d\'ep\^ot git sur le site de 
+l'h\'ebergeur GitHub, ce d\'ep\^ot nous a permis d'avoir le r\'eflexe de l'utiliser même 
+ si nous avons rencontr\'e quelques probl\`emes, il nous a permis \`a chacun de voir 
+l'avancement du projet. Le d\'ep\^ot est disponible \`a cette adresse : https://github.com/wissame95/IF06-Projet.git.
+\monimage{DepotGit.png}{D\'epôt sur GitHub}{depot}{0.8}
+\par\noindent
+ Cependant un tel d\'ep\^ot ne r\'epond pas \`a la question de la communication, chacun 
+habitant une ville diff\'erente, nous avons donc communiqu\'e via Skype pour 
+rem\'edier \`a ce probl\`eme.
+
+\chapter{Phase de d\'eveloppement}
+%
+\par
+Pour la phase de d\'eveloppement nous avons chacun de notre c\^ot\'e d\'evelopp\'e une 
+partie de l'application. Nous nous sommes partag\'es les diff\'erents 
+algorithmes, mais aussi les autres fontionnalit\'es comme les tests Junit.
+\section{L'architecture}
+\par
+Nous avons fait le choix de r\'epartir dans diff\'erents packages les classes et 
+interfaces. Nous avons eu des choix \`a faire \`a plusieurs niveaux. Par
+exemple un choix simple pour la grille de jeu, nous avons choisi une matrice 
+d'entier en remplacement d'une ArrayList d'entiers. Mais aussi des choix plus
+compliqu\'es, comme la repr\'esentation d'un sommet qui dans notre cas est la classe 
+Taquin.
+\par\noindent
+L'architecture se d\'ecompose en 7 packages : 
+\begin{description}
+ \item [algo] Contient les interfaces EnsembleATraiter et EnsembleMarque, toutes 
+les classes impl\'ementants ces interfaces et une classe Algo.
+ \item [jeu] Contient une interface Jeu, la classe Taquin. Mais aussi les 
+commandes, les actions, et les positions finales.
+ \item [comparateur] Contient deux comparateurs Manhattan et DepthManhattan.
+ \item [exceptions] Contient toutes les exceptions que nous avons d\^u cr\'eer.
+ \item [automate] Contient les classes relatives \`a l'automate.
+ \item [junit] Contient les diff\'erents tests JUnit.
+ \item [main] Contient une seule classe, Main. Elle g\`ere la lecture des 
+param\`etres et l'execution des m\'ethodes dans les autres classes, c'est
+ le lien entre l'utilisateur et l'application.
+\end{description}
+
+\section{Les fichiers test}
+\par
+Rapidement pour v\'erifier le fonctionnement du programme nous avons d\^u cr\'eer des fichiers tests de taquins t\'emoins. Ces fichiers se trouvent dans le dossier taquin
+\`a la racine du projet. Nous en avons utilis\'es un petit nombre, avec des tailles diff\'erentes et ``bien m\'elang\'es''.
+%
+\section{Fonction non impl\'ement\'e}
+Nous avons rencontrer des soucis sur l'impl\'ementation de la pile d'action, le probl\`eme intervient au moment de remonter les parents d'un Taquin, il vient
+certainement d'un null. Ceci a donc engendrer le fait de ne pas pouvoir tester nos m\'ethodes sur le parcours progressif.
+Enfin, nous avons aussi rencontrer des soucis de lecture des Junit et benchmarks dans une classe interne.
+\chapter{Analyse et Conclusion}
+%
+\section{Analyse des Benchmark}
+%
+\par
+Les benchmarks fournis par le module h2, nous ont permis d'am\'eliorer l'efficacit\'e de l'application, mais aussi de montrer le bon fonctionnement des m\'ethodes.
+Nous avons donc pour Algo et pour Taquin cr\'e\'es deux classes, une prouvant que le programme tourne correctement et l'autre pour montrer la rapidit\'e d'\'ex\'ecution
+avec un probl\`eme de plus en plus grand. Nous avons aussi \'ecrit un test pour l'ensemble incomplet pour observer la r\'esolution et le temps n\'ecessaire \`a celle-ci, en
+fonction de la taille de l'ensemble utilis\'e.
+%
+\subsection{Efficacit\'e des fonctions du Taquin}
+%
+Ci-dessous vous pouvez voir un r\'ecapitulatif des fonctions co\^uteuses de la classe Taquin.
+\monimage{taquinSpeed.png}{Efficacit\'e des fonctions du Taquin}{Eff}{0.6}
+%
+\subsection{Efficacit\'e des algorithmes}
+Les tests suivants ont \'et\'e r\'ealis\'es \`a l'aide de taq1.taq qui est un taquin de taille 3x3. On peut observer les diff\'erentes vitesse de r\'esolution pour le m\^eme Taquin en fonction de
+l'algorithme.
+\ml
+Les algorithmes utilisant un ensemble complet sont plus lent que les algortihmes utilisant un ensemble incomplet. De meme on observe que les tas sont plus rapide que les
+files et piles, qui demande le plus de temps de calcule.
+\ml
+Les algorithmes bas\'ees sur un automate sont les plus efficace, cependant l'efficacit\'e d\'epend de la profondeur de l'apprentissage de l'automate et de la taille du taquin.\'e
+\ml
+ En effet, le nombre de coup redondant grandit en m\^eme temps que la taille du taquin, il est donc pr\'ef\'erable d'utiliser cette automate sur un taquin de grande taille.
+\monimage{algoSpeed.png}{Diagramme des temps d'execution}{tempsExec}{0.6}
+
+\subsection{Etude sur l'ensemble incomplet}
+Ci-dessous vous pouvez voir un diagramme montrant le temps n\'ecessaire \`a la r\'esolution d'un taquin avec un ensemble incomplet sur 5 tailles diff\'erentes.
+\monimage{ensembleincomplettest2.pdf}{Exemple}{EX}{0.6}
+
+\section{Conclusion}
+%
+En d\'efinitive, ce projet nous a permis d'acqu\'erir une certaine autonomie, puisque nos simples connaissances ne suffisaient pas \`a impl\'ementer efficacement tous les aspects du projet.
+Nous avons \'egalement d\^u faire preuve de rigueur et d'inventivit\'e afin de contourner certaines difficult\'es inh\'erentes \`a la complexit\'e algorithmique du projet.
+\chapter{Resources utilis\'ees}
+\begin{itemize}
+ \item JUNIT
+ \item JAVA
+ \item Dia
+ \item Eclipse
+ \item Argouml
+ \item \LaTeX (sous kile)
+ \item Google Drive
+ \item Kate
+ \item Git, GitHub
+\end{itemize}
+
+\end{document}

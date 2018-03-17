@@ -1,0 +1,18 @@
+\select@language {french}
+\contentsline {chapter}{\numberline {1}Introduction}{5}
+\contentsline {chapter}{\numberline {2}Etude}{6}
+\contentsline {section}{\numberline {2.1}Analyse de faisabilit\'e}{6}
+\contentsline {section}{\numberline {2.2}Conception UML}{7}
+\contentsline {chapter}{\numberline {3}La gestion de projet}{9}
+\contentsline {section}{\numberline {3.1}Le travail de groupe}{9}
+\contentsline {chapter}{\numberline {4}Phase de d\'eveloppement}{11}
+\contentsline {section}{\numberline {4.1}L'architecture}{11}
+\contentsline {section}{\numberline {4.2}Les fichiers test}{12}
+\contentsline {section}{\numberline {4.3}Fonction non impl\'ement\'e}{12}
+\contentsline {chapter}{\numberline {5}Analyse et Conclusion}{13}
+\contentsline {section}{\numberline {5.1}Analyse des Benchmark}{13}
+\contentsline {subsection}{\numberline {5.1.1}Efficacit\'e des fonctions du Taquin}{13}
+\contentsline {subsection}{\numberline {5.1.2}Efficacit\'e des algorithmes}{14}
+\contentsline {subsection}{\numberline {5.1.3}Etude sur l'ensemble incomplet}{15}
+\contentsline {section}{\numberline {5.2}Conclusion}{16}
+\contentsline {chapter}{\numberline {6}Resources utilis\'ees}{17}
